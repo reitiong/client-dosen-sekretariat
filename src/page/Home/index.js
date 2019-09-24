@@ -9,10 +9,10 @@ const Home = props => {
     // props.history.push("/login");
   });
   const data = [
-    { name: "Group A", value: 400 },
-    { name: "Group B", value: 300 },
-    { name: "Group C", value: 300 },
-    { name: "Group D", value: 200 }
+    //{ name: "Group A", value: 400 },
+    { name: "Mahasiswa Dengan Kehadiran Diatas 75%", value: 80 },
+    //{ name: "Group C", value: 300 },
+    { name: "Mahasiswa Dengan Kehadiran Dibawah 75%", value: 20 }
   ];
   const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
@@ -37,26 +37,27 @@ const Home = props => {
           </div>
           <div className="d-flex flex-column">
             <div className="p-3 border-bottom border-light">
-              <NavLink className="text-light">Side bar</NavLink>
+              <NavLink className="text-light">Laporan Kehadiran Mahasiswa</NavLink>
             </div>
             <div className="p-3 border-bottom border-light">
-              <NavLink className="text-light">Side bar</NavLink>
+              <NavLink className="text-light">Buka Kamera Scan QR Code</NavLink>
             </div>
             <div className="p-3 border-bottom border-light">
-              <NavLink className="text-light">Side bar</NavLink>
+              <NavLink className="text-light">Buat Jadwal Pengganti</NavLink>
             </div>
           </div>
         </div>
         <div className="main-content p-3 bg-light">
           <div className="content-content p-2 border border-dark bg-light">
             <div>
-              <PieChart width={400} height={400}>
+              <div className="d-flex justify-content-center">
+              <PieChart width={400} height={250}>
                 <Pie
                   data={data}
-                  cx={200}
-                  cy={200}
+                  cx={150}
+                  cy={130}
                   label
-                  outerRadius={80}
+                  outerRadius={100}
                   fill="#8884d8"
                   dataKey="value"
                 >
@@ -69,43 +70,45 @@ const Home = props => {
                 </Pie>
                 <Tooltip />
               </PieChart>
-              Senin
+            </div>
+
+              Mahasiswa Dengan Kehadiran Diatas 75%
               <table className="table table-striped table-hover">
                 <thead className="thead-dark">
                   <tr>
-                    <th>Mata Kuliah</th>
-                    <th>Jam Mulai</th>
+                    <th>Nama Mahasiswa</th>
+                    <th>NPM</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Kalkulus</td>
-                    <td>17:00 - 16.40</td>
+                    <td>Adi Andoyo</td>
+                    <td>15420909</td>
                   </tr>
                   <tr>
-                    <td>Kalkulus</td>
-                    <td>17:00 - 16.40</td>
+                    <td>Feryadi</td>
+                    <td>15420933</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <div>
-              Selasa
+              Mahasiswa Dengan Kehadiran Dibawah 75%
               <table className="table">
                 <thead className="thead-dark">
                   <tr>
-                    <th>Mata Kuliah</th>
-                    <th>Jam Mulai</th>
+                    <th>Nama Mahasiswa</th>
+                    <th>NPM</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Kalkulus</td>
-                    <td>17:00 - 16.40</td>
+                    <td>Hendri Januardi</td>
+                    <td>15420937</td>
                   </tr>
                   <tr>
-                    <td>Kalkulus</td>
-                    <td>17:00 - 16.40</td>
+                    <td>Sylvia Devianti</td>
+                    <td>15420953</td>
                   </tr>
                 </tbody>
               </table>
