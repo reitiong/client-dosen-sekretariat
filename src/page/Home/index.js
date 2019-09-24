@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { NavLink } from "react-router-dom";
 import logo from "./../../assets/images/logo.png";
 import { PieChart, Pie, Sector, Cell, Tooltip } from "recharts";
+import QrReader from "react-qr-reader";
 
 const Home = props => {
   useEffect(() => {
@@ -21,6 +22,12 @@ const Home = props => {
     { mataKuliah: "Kalkulus" },
     { mataKuliah: "Kalkulus" }
   ];
+  const handleScan = data => {
+    console.log(data);
+  };
+  const handleError = err => {
+    console.error(err);
+  };
   return (
     <div className="main-container bg-purple">
       <div className="d-flex justify-content-between bg-purple margin-left-300 px-2">
@@ -37,7 +44,9 @@ const Home = props => {
           </div>
           <div className="d-flex flex-column">
             <div className="p-3 border-bottom border-light">
-              <NavLink className="text-light">Laporan Kehadiran Mahasiswa</NavLink>
+              <NavLink className="text-light">
+                Laporan Kehadiran Mahasiswa
+              </NavLink>
             </div>
             <div className="p-3 border-bottom border-light">
               <NavLink className="text-light">Buka Kamera Scan QR Code</NavLink>
@@ -51,27 +60,32 @@ const Home = props => {
           <div className="content-content p-2 border border-dark bg-light">
             <div>
               <div className="d-flex justify-content-center">
-              <PieChart width={400} height={250}>
-                <Pie
-                  data={data}
-                  cx={150}
-                  cy={130}
-                  label
-                  outerRadius={100}
-                  fill="#8884d8"
-                  dataKey="value"
-                >
-                  {data.map((entry, index) => (
-                    <Cell
-                      key={`cell-${index}`}
-                      fill={COLORS[index % COLORS.length]}
-                    />
-                  ))}
-                </Pie>
-                <Tooltip />
-              </PieChart>
-            </div>
-
+                <QrReader
+                  delay={300}
+                  onError={handleError}
+                  onScan={handleScan}
+                  style={{ width: "100%" }}
+                />
+                <PieChart width={400} height={250}>
+                  <Pie
+                    data={data}
+                    cx={150}
+                    cy={130}
+                    label
+                    outerRadius={100}
+                    fill="#8884d8"
+                    dataKey="value"
+                  >
+                    {data.map((entry, index) => (
+                      <Cell
+                        key={`cell-${index}`}
+                        fill={COLORS[index % COLORS.length]}
+                      />
+                    ))}
+                  </Pie>
+                  <Tooltip />
+                </PieChart>
+              </div>
               Mahasiswa Dengan Kehadiran Diatas 75%
               <table className="table table-striped table-hover">
                 <thead className="thead-dark">
