@@ -8,9 +8,11 @@
     "firebase": "^6.6.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-minimal-pie-chart": "^5.0.1",
     "react-qr-reader": "^2.2.1",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1",
+    "recharts": "^1.7.1",
     "validator": "^11.1.0"
   },
   "scripts": {
