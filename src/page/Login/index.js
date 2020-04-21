@@ -2,10 +2,13 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../../assets/images/logo.png";
 import "./../../assets/css/css.css";
-const Login = props => {
+import firebase from "firebase";
+
+const Login = (props) => {
   const login = () => {
     props.history.push("/");
   };
+
   return (
     <div className="main-container bg-purple justify-content-center align-items-center">
       <div className="">
