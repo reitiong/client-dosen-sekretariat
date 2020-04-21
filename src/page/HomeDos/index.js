@@ -1,98 +1,76 @@
 import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { NavLink } from "react-router-dom";
-import logo from "./../../assets/images/logo.png";
 
 const HomeDos = (props) => {
   return (
-    <div className="main-container bg-purple">
-      <div className="d-flex justify-content-between bg-purple margin-left-300 px-2">
-        <NavLink className="p-2 text-light">Home</NavLink>
-        <NavLink className="p-2 text-light">Home</NavLink>
-        <NavLink className="p-2 text-light" to="/login">
-          Logout
-        </NavLink>
-      </div>
-      <div className="main-wrapper">
-        <div className="main-side-bar bg-purple">
-          <div className="d-flex justify-content-center py-5 bg-light">
-            <img src={logo} alt="logo" width="200px" height="200px" />
+    <div className="main-content p-3 bg-light">
+      <div className="content-content p-2 border border-dark bg-light">
+        <div>
+          <div className="d-flex justify-content-center">
+            <button className="btn btn-info">Cetak Laporan</button>
           </div>
-          <div className="d-flex flex-column">
-            <div className="p-3 border-bottom border-light">
-              <NavLink className="text-light">
-                Laporan Kehadiran Mahasiswa
-              </NavLink>
-            </div>
-            <div className="p-3 border-bottom border-light">
-              <NavLink className="text-light">Buka Kamera Scan QR Code</NavLink>
-            </div>
-            <div className="p-3 border-bottom border-light">
-              <NavLink className="text-light">Buat Jadwal Pengganti</NavLink>
-            </div>
-          </div>
+          Mahasiswa Dengan Kehadiran Di Bawah 75% <br></br> Jumlah = 4 Orang{" "}
+          <br></br> Persentase = 20%
+          <table className="table table-striped table-hover">
+            <thead className="thead-dark">
+              <tr>
+                <th>Nama Mahasiswa</th>
+                <th>NPM</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Adi Andoyo</td>
+                <td>15420909</td>
+              </tr>
+              <tr>
+                <td>Hendri Januardi</td>
+                <td>15420937</td>
+              </tr>
+              <tr>
+                <td>Sylvia Devianti</td>
+                <td>15420953</td>
+              </tr>
+              <tr>
+                <td>Willy Yanpraga</td>
+                <td>15420964</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div className="main-content p-3 bg-light">
-          <div className="content-content p-2 border border-dark bg-light">
-            <div>
-              <div className="d-flex justify-content-center">
-                <button className="btn btn-info">Cetak Laporan</button>
-              </div>
-              Senin
-              <table className="table">
-                <thead className="thead-dark">
-                  <tr>
-                    <th>Mata Kuliah</th>
-                    <th>Jam Mulai</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      Interaksi Manusia Komputer <br></br>Dosen : Hendro,
-                      S.Kom., M.M., M.Ti. <br></br>
-                      Semester : 8 <br></br> Jumlah Mahasiswa : 20 Orang
-                    </td>
-                    <td>17.00 - 18.40</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Kecerdasan Buatan<br></br> Dosen : Haryanto, S.Kom., M.Ti.{" "}
-                      <br></br>
-                      Semester : 7 <br></br> Jumlah Mahasiswa : 20 Orang
-                    </td>
-                    <td>19.00 - 20.40</td>
-                  </tr>
-                </tbody>
-              </table>
-              Selasa
-              <table className="table">
-                <thead className="thead-dark">
-                  <tr>
-                    <th>Mata Kuliah</th>
-                    <th>Jam Mulai</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      Kalkulus<br></br> Dosen : Sofian KH, S.T., M.Sc. <br></br>
-                      Semester : 2 <br></br> Jumlah Mahasiswa : 20 Orang
-                    </td>
-                    <td>17.00 - 18.40</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Pemrograman <br></br> Dosen : Kartono, S.Kom., M.Kom.{" "}
-                      <br></br>
-                      Semester : 4 <br></br> Jumlah Mahasiswa : 20 Orang
-                    </td>
-                    <td>19.00 - 20.40</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+        <div>
+          Mahasiswa Dengan Kehadiran Di Atas 75% <br></br> Jumlah = 16 Orang{" "}
+          <br></br> Persentase = 80%
+          <table className="table">
+            <thead className="thead-dark">
+              <tr>
+                <th>Nama Mahasiswa</th>
+                <th>NPM</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Feryadi</td>
+                <td>15420933</td>
+              </tr>
+              <tr>
+                <td>Velzen Pratama</td>
+                <td>15420956</td>
+              </tr>
+              <tr>
+                <td>Willy</td>
+                <td>15420962</td>
+              </tr>
+              <tr>
+                <td>Willy Pangestu</td>
+                <td>15420963</td>
+              </tr>
+              <tr>
+                <td>Yerri Fitrah</td>
+                <td>15420965</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
